@@ -15,6 +15,9 @@ namespace DemoWebApp2.Tests
                 driver.Manage().Window.Maximize();
 
                 driver.Navigate().GoToUrl("http://localhost/SeleniumTest");
+
+                IWebElement applicationButton = driver.FindElement(By.Id("startApplication"));
+                applicationButton.Click();
             }
         }
     }
