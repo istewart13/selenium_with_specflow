@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xunit;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace DemoWebApp2.Tests
 {
-    class LoanApplicationTests
+    public class LoanApplicationTests
     {
+        [Fact]
+        public void StartApplication()
+        {
+            using (IWebDriver driver = new ChromeDriver())
+            {
+                // maximise browser window
+                driver.Manage().Window.Maximize();
+
+                driver.Navigate().GoToUrl("http://localhost/SeleniumTest");
+            }
+        }
     }
 }
